@@ -1,0 +1,25 @@
+The C code to be disassembled:
+
+#include <stdio.h>
+
+int main() 
+{
+    printf("Hello, World!\n");
+    return 0;
+}
+
+Disassembled Code:
+
+000000000040112d <main>:
+  40112d:	55                   	push   rbp
+  40112e:	48 89 e5             	mov    rbp,rsp
+  401131:	48 8d 3d 7a 0e 00 00 	lea    rdi,[rip+0xe7a]        # 402012 <_IO_stdin_used+0x2>
+  401138:	b8 00 00 00 00       	mov    eax,0x0
+  40113d:	e8 ee fe ff ff       	call   401030 <printf@plt>
+  401142:	b8 00 00 00 00       	mov    eax,0x0
+  401147:	5d                   	pop    rbp
+  401148:	c3                   	ret
+  401149:	66 90                	xchg   ax,ax
+  40114b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+
